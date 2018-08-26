@@ -1,19 +1,19 @@
 .footer-title {
   height: 100% !important;
-  width: 15% !important;
+  width: 25% !important;
   padding: 1rem 1rem !important;
 }
 .footer-button {
   height: 100% !important;
-  width: 10% !important;
+  width: 25% !important;
   padding: 1rem 1rem !important;
   border-radius: 0;
-  background-color: #2D7DD2;
+  background-color: #2d7dd2;
   color: whitesmoke;
 }
 .footer-body {
   height: 100% !important;
-  width: 75% !important;
+  width: 50% !important;
   padding: 1rem 1rem !important;
 }
 .post {
