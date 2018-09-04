@@ -1,21 +1,26 @@
 .footer-title {
   height: 100% !important;
-  width: 25% !important;
+  width: 20% !important;
   padding: 1rem 1rem !important;
+  border-radius: 1rem;
 }
+
 .footer-button {
   height: 100% !important;
-  width: 25% !important;
+  width: 10% !important;
   padding: 1rem 1rem !important;
-  border-radius: 0;
   background-color: #2d7dd2;
   color: whitesmoke;
+  border-radius: 1rem;
 }
+
 .footer-body {
   height: 100% !important;
-  width: 50% !important;
+  width: 70% !important;
   padding: 1rem 1rem !important;
+  border-radius: 1rem;
 }
+
 .post {
   margin-bottom: 1rem;
   margin-top: 1rem;
@@ -27,4 +32,8 @@ html {
 
 body {
   background-color: #474647;
+}
+
+.loading {
+  color: white;
 }

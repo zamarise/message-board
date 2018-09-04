@@ -14,12 +14,12 @@ export function getPosts() {
       'value',
       snapshot => {
         dispatch({
-          type: POST_STATUS,
-          payload: false,
-        });
-        dispatch({
           type: FETCH_POSTS,
           payload: snapshot.val(),
+        });
+        dispatch({
+          type: POST_STATUS,
+          payload: false,
         });
         // dispatch another callback function on .on
       },
@@ -34,10 +34,27 @@ export function getPosts() {
   };
 }
 
-export function savePost(post) {
-  return dispatch => database.push(post);
+export function savePost(post, uid) {
+  return dispatch => database.push({ ...post, uid });
 }
 
 export function deletePost(id) {
   return dispatch => database.child(id).remove();
+}
+
+export function saveComment(comment, id, uid) {
+  return dispatch =>
+    database
+      .child(id)
+      .child('comments')
+      .push({ content: comment.content, uid });
+}
+
+export function deleteComment(postId, commentId) {
+  return dispatch =>
+    database
+      .child(postId)
+      .child('comments')
+      .child(commentId)
+      .remove();
 }

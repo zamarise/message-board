@@ -5,6 +5,7 @@ import FooterFormButton from '../components/FooterFormButton';
 import InputField from '../components/InputField';
 import SimpleBox from '../components/SimpleBox';
 import ErrorAlert from '../components/ErrorAlert';
+import { errStyle } from '../helpers/ReduxFormValidation';
 
 class Login extends Component {
   constructor(props) {
@@ -38,9 +39,6 @@ class Login extends Component {
   }
 
   renderBody() {
-    const errStyle = {
-      borderColor: 'red',
-    };
     return (
       <div>
         <form

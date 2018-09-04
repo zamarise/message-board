@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 // to connect to global store
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { getUser } from '../actions/userActions';
 import { getPosts } from '../actions/postActions';
+import { getUser } from '../actions/userActions';
+import Loading from '../components/Loading';
 
 class LoadingComponent extends Component {
   componentWillMount() {
@@ -26,7 +27,11 @@ class LoadingComponent extends Component {
     if ((!userLoading && !postsLoading) || this.props.user === null) {
       return <div>{children}</div>;
     } else {
-      return <div>Loading...</div>;
+      return (
+        <div>
+          <Loading />
+        </div>
+      );
     }
   }
 }

@@ -11,6 +11,7 @@ import CreateAccount from './containers/CreateAccount';
 import ListPosts from './containers/ListPosts';
 import LoadingComponent from './containers/LoadingComponent';
 import Login from './containers/Login';
+import PostDetail from './containers/PostDetail';
 import reducers from './reducers/index';
 import registerServiceWorker from './registerServiceWorker';
 
@@ -25,7 +26,8 @@ ReactDOM.render(
           <Route path="/CreateAccount" component={CreateAccount} />
           <Route path="/Login" component={Login} />
           <AuthenticatedComponent>
-            <Route path="/" component={ListPosts} />
+            <Route path="/:id" component={PostDetail} />
+            <Route exact path="/" component={ListPosts} />
           </AuthenticatedComponent>
         </Switch>
       </LoadingComponent>

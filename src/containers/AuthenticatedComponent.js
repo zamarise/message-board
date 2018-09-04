@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
@@ -11,7 +12,7 @@ class AuthenticatedComponent extends Component {
   }
   render() {
     const { user, children, userLoading } = this.props;
-    return userLoading === false && user ? children : null;
+    return userLoading === false && user ? <div>{children}</div> : null;
   }
 }
 
