@@ -1,6 +1,7 @@
 // combine all reducers into one place called rootReducer
 import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
+import loadingReducer from './loadingReducer';
 import postReducer from './postReducer';
 import userReducer from './userReducer';
 
@@ -10,6 +11,7 @@ const rootReducer = combineReducers({
   form: formReducer,
   posts: postReducer,
   user: userReducer,
+  loading: loadingReducer,
 });
 
 export default rootReducer;

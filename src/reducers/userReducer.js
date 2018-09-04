@@ -1,9 +1,9 @@
 import { GET_USER } from '../actions/userActions';
 
-export default function(state = { loading: true }, action) {
+export default function(state = {}, action) {
   switch (action.type) {
     case GET_USER:
-      return { loading: false, ...action.payload };
+      return action.payload;
     default:
       return state;
   }

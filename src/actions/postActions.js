@@ -1,14 +1,36 @@
 import { database } from '../Firebase';
 export const FETCH_POSTS = 'fetch_posts';
+export const POST_STATUS = 'post_status';
 
 export function getPosts() {
   return dispatch => {
-    database.on('value', snapshot => {
-      dispatch({
-        type: FETCH_POSTS,
-        payload: snapshot.val(),
-      });
+    // loading
+    dispatch({
+      type: POST_STATUS,
+      payload: true,
     });
+    // not loading
+    database.on(
+      'value',
+      snapshot => {
+        dispatch({
+          type: POST_STATUS,
+          payload: false,
+        });
+        dispatch({
+          type: FETCH_POSTS,
+          payload: snapshot.val(),
+        });
+        // dispatch another callback function on .on
+      },
+      () => {
+        dispatch({
+          type: POST_STATUS,
+          // -1 indicates tried to load & will load again in the future
+          payload: -1,
+        });
+      }
+    );
   };
 }
 

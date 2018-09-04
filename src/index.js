@@ -1,16 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ListPosts from './containers/ListPosts';
-import registerServiceWorker from './registerServiceWorker';
+// will match up react and redux
+import { Provider } from 'react-redux';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 // create our global store and apply our middleware for redux
 import { applyMiddleware, createStore } from 'redux';
 import thunk from 'redux-thunk';
-import reducers from './reducers/index';
-// will match up react and redux
-import { Provider } from 'react-redux';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Login from './containers/Login';
+import AuthenticatedComponent from './containers/AuthenticatedComponent';
 import CreateAccount from './containers/CreateAccount';
+import ListPosts from './containers/ListPosts';
+import LoadingComponent from './containers/LoadingComponent';
+import Login from './containers/Login';
+import reducers from './reducers/index';
+import registerServiceWorker from './registerServiceWorker';
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 
@@ -18,11 +20,15 @@ const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <BrowserRouter>
-      <Switch>
-        <Route path="/CreateAccount" component={CreateAccount} />
-        <Route path="/Login" component={Login} />
-        <Route path="/" component={ListPosts} />
-      </Switch>
+      <LoadingComponent>
+        <Switch>
+          <Route path="/CreateAccount" component={CreateAccount} />
+          <Route path="/Login" component={Login} />
+          <AuthenticatedComponent>
+            <Route path="/" component={ListPosts} />
+          </AuthenticatedComponent>
+        </Switch>
+      </LoadingComponent>
     </BrowserRouter>
   </Provider>,
   document.getElementById('root')

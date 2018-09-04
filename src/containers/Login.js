@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getUser, login } from '../actions/userActions';
+import { login, getUser } from '../actions/userActions';
 import FooterFormButton from '../components/FooterFormButton';
 import InputField from '../components/InputField';
 import SimpleBox from '../components/SimpleBox';
@@ -17,12 +17,14 @@ class Login extends Component {
   }
 
   componentWillMount() {
-    this.props.getUser();
+    if (this.props.user !== null) {
+      this.props.history.push('/');
+    }
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.user.email !== undefined) {
-      this.props.history.push('/');
+    if (nextProps.user !== null) {
+      nextProps.history.push('/');
     }
   }
 

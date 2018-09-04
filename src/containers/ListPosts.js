@@ -8,21 +8,6 @@ import PostCard from '../components/PostCard';
 import { getUser, logout } from '../actions/userActions';
 
 class App extends Component {
-  componentWillMount() {
-    this.props.getPosts();
-    this.props.getUser();
-    // if no user then redirect to the Login page
-    if (this.props.user.loading === false && this.props.user.email === undefined) {
-      this.props.history.replace('/Login');
-    }
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.user.loading === false && nextProps.user.email === undefined) {
-      this.props.history.replace('/Login');
-    }
-  }
-
   renderPosts() {
     return _.map(this.props.posts, (post, key) => {
       return (
