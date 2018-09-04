@@ -16,6 +16,7 @@ const InputField = props => {
           id={props.id}
           className="form-control"
           placeholder={`Please enter ${isVowel(props.label[0]) ? 'an' : 'a'} ${props.label}`}
+          style={props.style}
         />
       </div>
     </div>
