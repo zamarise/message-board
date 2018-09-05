@@ -32,6 +32,14 @@ npm start
 
 - Open a pull request, all contributions will be considered.
 
+## Notes
+
+- Next version to have:
+
+* ability to post links and upload photos.
+* sign in button moved to the right.
+* accessibility (ADA)
+
 ## Contact Information
 
 Twitter: [@adriftinthesea](https://twitter.com/adriftinthesea)
