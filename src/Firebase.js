@@ -9,7 +9,7 @@ const SENDER_ID = process.env.REACT_APP_SENDER_ID;
 
 const config = {
   apiKey: API_KEY,
-  authDomain: `message-board-${API_KEY}.firebaseapp.com`,
+  authDomain: `message-board-${AUTH_DOMAIN}.firebaseapp.com`,
   databaseURL: `https://message-board-${AUTH_DOMAIN}.firebaseio.com`,
   projectId: `message-board-${AUTH_DOMAIN}`,
   storageBucket: `message-board-${AUTH_DOMAIN}.appspot.com`,
