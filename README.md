@@ -34,11 +34,12 @@ npm start
 
 ## Notes
 
-### Next version to have:
+### :eyes: Next version(s) to have:
 
 - ability to post links and upload photos.
 - sign in button moved to the right.
 - accessibility (ADA)
+- Google and Twitter sign in
 
 ## Contact Information
 
