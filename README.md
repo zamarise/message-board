@@ -34,11 +34,11 @@ npm start
 
 ## Notes
 
-- Next version to have:
+### Next version to have:
 
-* ability to post links and upload photos.
-* sign in button moved to the right.
-* accessibility (ADA)
+- ability to post links and upload photos.
+- sign in button moved to the right.
+- accessibility (ADA)
 
 ## Contact Information
 
