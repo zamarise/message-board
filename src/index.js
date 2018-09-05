@@ -1,4 +1,5 @@
 import React from 'react';
+import './env';
 import ReactDOM from 'react-dom';
 // will match up react and redux
 import { Provider } from 'react-redux';
@@ -14,6 +15,7 @@ import Login from './containers/Login';
 import PostDetail from './containers/PostDetail';
 import reducers from './reducers/index';
 import registerServiceWorker from './registerServiceWorker';
+require('dotenv').config();
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 
